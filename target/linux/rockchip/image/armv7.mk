@@ -9,7 +9,7 @@ define Device/hk1-mini
   DEVICE_VENDOR := Rockchip
   DEVICE_MODEL := rk3229_box
   SOC := rk3229
-  UBOOT_DEVICE_NAME := rk3229-hk1-mini
+  UBOOT_DEVICE_NAME := hk1-mini-rk3229
   IMAGE/sysupgrade.img.gz := boot-common | boot-script hk1-mini | pine64-img | gzip | append-metadata
   DEVICE_PACKAGES := kmod-usb-net-rtl8152
 endef
