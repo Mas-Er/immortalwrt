@@ -13,8 +13,8 @@
 	compatible = "friendlyarm,hk1-mini","rockchip,rk3229";
 	
 	aliases {
-		ethernet0 = &rtl8125_1;
-		ethernet1 = &rtl8125_2;
+		ethernet0 = &rtl8189es_1;
+		ethernet1 = &rtl8189es_2;
 		mmc0 = &sdhci;
 		mmc1 = &sdmmc0;
 
