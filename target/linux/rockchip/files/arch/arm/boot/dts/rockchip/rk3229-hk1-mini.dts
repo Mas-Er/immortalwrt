@@ -10,7 +10,19 @@
 
 / {
 	model = "Rockchip HK1 Mini";
-	compatible = "rockchip,rk3229";
+	compatible = "friendlyarm,hk1-mini","rockchip,rk3229";
+	
+	aliases {
+		ethernet0 = &rtl8125_1;
+		ethernet1 = &rtl8125_2;
+		mmc0 = &sdhci;
+		mmc1 = &sdmmc0;
+
+		led-boot = &power_led;
+		led-failsafe = &power_led;
+		led-running = &power_led;
+		led-upgrade = &power_led;
+	};
 
 	chosen {
 		bootargs = "earlyprintk=uart8250,mmio32,0x11030000";
