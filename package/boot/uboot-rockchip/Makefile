@@ -23,6 +23,22 @@ define U-Boot/Default
 endef
 
 
+# RK3229 boards
+
+define U-Boot/Default/rk3229
+  BUILD_SUBTARGET:=armv7
+  DEPENDS:=+PACKAGE_u-boot-$(1):trusted-firmware-a-rk3229
+  ATF:=$(RK3229_ATF)
+endef
+
+define U-Boot/hk1-mini-rk3229
+  $(U-Boot/Default/rk3229)
+  NAME:=HK1 Mini
+  BUILD_DEVICES:= \
+    hk1-mini
+endef
+
+
 # RK3328 boards
 
 define U-Boot/Default/rk3328
@@ -135,6 +151,7 @@ define U-Boot/nanopi-r5s-rk3568
 endef
 
 UBOOT_TARGETS := \
+  hk1-mini-rk32229 \
   nanopi-r4s-rk3399 \
   nanopi-r4s-enterprise-rk3399 \
   rock-pi-4-rk3399 \
