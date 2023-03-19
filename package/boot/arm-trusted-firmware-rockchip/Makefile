@@ -23,6 +23,13 @@ define Trusted-Firmware-A/Default
   BUILD_TARGET:=rockchip
 endef
 
+define Trusted-Firmware-A/rk3229
+  BUILD_SUBTARGET:=armv7
+  ATF:=rk32/$(RK3229_ATF)
+  DDR:=rk32/$(RK3229_DDR)
+  LOADER:=rk33/$(RK3229_LOADER)
+endef
+
 define Trusted-Firmware-A/rk3328
   BUILD_SUBTARGET:=armv8
   ATF:=rk33/$(RK3328_ATF)
