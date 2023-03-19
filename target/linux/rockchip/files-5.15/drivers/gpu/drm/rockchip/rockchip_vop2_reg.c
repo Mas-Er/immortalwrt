@@ -245,11 +245,32 @@ static const struct vop2_data rk3568_vop = {
 	.soc_id = 3568,
 };
 
+static const struct vop2_win_data rk322x_vop_win_data[] = {
+	{ .base = 0x00, .phy = &rk3288_win01_data,
+	  .type = DRM_PLANE_TYPE_PRIMARY },
+	{ .base = 0x40, .phy = &rk3288_win01_data,
+	  .type = DRM_PLANE_TYPE_CURSOR },
+};
+
+static const struct vop2_data rk322x_vop = {
+	.version = VOP_VERSION(3, 7),
+	.feature = VOP_FEATURE_OUTPUT_10BIT | VOP_FEATURE_ALPHA_SCALE,
+	.max_input = {4096, 8192},
+	.max_output = {4096, 2160},
+	.intr = &rk3366_vop_intr,
+	.ctrl = &rk3288_ctrl_data,
+	.win = rk322x_vop_win_data,
+	.win_size = ARRAY_SIZE(rk322x_vop_win_data),
+};
+
 static const struct of_device_id vop2_dt_match[] = {
 	{
 		.compatible = "rockchip,rk3566-vop",
 		.data = &rk3566_vop,
 	}, {
+		.compatible = "rockchip,rk322x-vop",
+	    .data = &rk322x_vop },
+    }, {
 		.compatible = "rockchip,rk3568-vop",
 		.data = &rk3568_vop,
 	}, {
