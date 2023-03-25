@@ -3,7 +3,7 @@
 #
 
 SUBTARGET:=rk3229
-CPU_TYPE:=cortex-a53
+CPU_TYPE:=cortex-a7
 CPU_SUBTYPE:=neon-vfpv4
 BOARDNAME:=RK322X boards (32 bit)
 
